@@ -3,8 +3,7 @@ pub mod payload;
 pub mod hmac;
 pub mod ps;
 pub mod json;
-
-pub const KEY: &str = "cec86f3bf7df905c5c111c66accb3194da0c42f2";
+pub mod gitlab;
 
 
 

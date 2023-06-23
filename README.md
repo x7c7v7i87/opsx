@@ -1,11 +1,17 @@
 ## About opsx
 
 ```txt
-This is a small git hook trigger based on rust axum, used for customizing automation operations, packing, uploading, executing, providing full flexibility and autonomy. It abandons the cumbersome and complex configuration process of tools like Jenkins. I believe that the traditional combination of shell, expect, and scp is sufficient to complete many automated deployments. Although this hook is still in its early stages, features like logs, proxy and different combinations will be added later.
+This is a small git hook trigger based on rust axum, used for custom automation operations, custom packaging, uploading, and execution, with complete flexibility and autonomy.
 
-The current version supports GitHub hooks.
-And it can execute multiple tasks. Here is the configuration:
+It abandons the cumbersome and complex configuration process of tools like Jenkins.
 
+I believe that the traditional combination of shell, expect, and scp is sufficient to complete many automated deployments.
+
+Although this hook is still in its early stages, logs, proxies and different combinations will be added later.
+
+The current version supports hooks from GitHub and GitLab.
+
+And it can execute multiple tasks. The following is the structure setting:
 {
         "name":"test",
         "security_key":"123456",
@@ -15,12 +21,11 @@ And it can execute multiple tasks. Here is the configuration:
         "ext_script":"/opt/ext/xxx.sh",
 }
 name = The project name 'test' corresponds to the URL request name, such as the deployment address: xxxx.com/dev?keyword=test
-security_key = GitHub or GitLab security code, used for hmac verification etc.
-git_type = The type of hook, currently only supports GitHub
+security_key = GitHub or GitLab security code, used for hmac and other verifications. (PS: MD5 is recommended)
+git_type = Hook type: GitHub, GitLab
 git_url = git address
 git_branch = The branch that triggers the deployment
 ext_script = The execution script is based on asynchronous execution by tokio, hence it perfectly supports complex builds.
-
 ```
 
 

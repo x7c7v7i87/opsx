@@ -6,12 +6,9 @@ use axum::http::HeaderMap;
 use std::str;
 
 
-//这行改成动态获取
-// use crate::KEY;
-
 type HmacSha256 = Hmac<Sha256>;
 
-pub fn check(headers: HeaderMap, body: String,security_key:String) -> bool {
+pub fn github_check(headers: HeaderMap, body: String,security_key:String) -> bool {
     let asx = headers
         .get("x-hub-signature-256")
         .unwrap()
@@ -41,5 +38,22 @@ pub fn check(headers: HeaderMap, body: String,security_key:String) -> bool {
             println!("check: {:?}", e);
             false
         }
+    }
+}
+
+
+
+pub fn gitlab_check(headers: HeaderMap, _body: String,security_key:String) -> bool {
+    let asx = headers
+        .get("x-gitlab-token")
+        .unwrap()
+        .to_str()
+        .unwrap();
+
+    let security = security_key.as_str();
+    if asx == security {
+        return true;
+    }else{
+        return false;
     }
 }
