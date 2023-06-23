@@ -36,71 +36,7 @@ impl Params {
         print!("bl: {}", bl);
     }
 
-
-
-    pub async fn admin() {
-        let mut child = Command::new("/bin/bash")
-            .arg("/opt/admin.sh")
-            .spawn()
-            .expect("failed to spawn");
-
-        // Await until the command completes
-        let status = child.wait().await;
-        let bl = match status {
-            Ok(status) => {
-                println!("the command exited with: {}", status);
-                true
-            }
-            Err(e) => {
-                println!("the command failed with: {}", e);
-                false
-            }
-        };
-        print!("bl: {}", bl);
-    }
-
-    pub async fn api() {
-        let mut child = Command::new("/bin/bash")
-            .arg("/opt/api.sh")
-            .spawn()
-            .expect("failed to spawn");
-
-        // Await until the command completes
-        let status = child.wait().await;
-        let bl = match status {
-            Ok(status) => {
-                println!("the command exited with: {}", status);
-                true
-            }
-            Err(e) => {
-                println!("the command failed with: {}", e);
-                false
-            }
-        };
-        print!("bl: {}", bl);
-    }
-
-    pub async fn h5() {
-        let mut child = Command::new("/bin/bash")
-            .arg("/opt/h5.sh")
-            .spawn()
-            .expect("failed to spawn");
-
-        // Await until the command completes
-        let status = child.wait().await;
-        let bl = match status {
-            Ok(status) => {
-                println!("the command exited with: {}", status);
-                true
-            }
-            Err(e) => {
-                println!("the command failed with: {}", e);
-                false
-            }
-        };
-        print!("bl: {}", bl);
-    }
-
+    
     pub async fn test() {
         println!("test is ok");
     }
