@@ -1,0 +1,31 @@
+[package]
+name = "opsx"
+version = "0.1.0"
+edition = "2021"
+authors = ["Andy <x7c7v7i87@gmail.com>"]
+readme = "README.md"
+license = "MIT"
+repository = "https://github.com/x7c7v7i87/opsx"
+description = """
+    Free and fast build as git the webhooks
+"""
+
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+axum = "0.6.18"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0.68"
+tokio = { version = "1.0", features = ["full"] }
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+anyhow = "1.0.51"
+sha2 = "0.10.6"
+hmac = "0.12.1"
+# hex-literal = "0.3.4"
+hex = "0.4.3"
+crypto = "0.4.0"
+rustc-serialize = "0.3.24"
+
+
