@@ -1,6 +1,6 @@
 [package]
 name = "opsx"
-version = "0.1.0"
+version = "1.0.0"
 edition = "2021"
 authors = ["Andy <x7c7v7i87@gmail.com>"]
 readme = "README.md"
@@ -28,3 +28,36 @@ hmac = "0.12.1"
 hex = "0.4.3"
 crypto = "0.4.0"
 rustc-serialize = "0.3.25"
+
+
+[profile.dev]
+codegen-units = 4
+debug = true
+debug-assertions = true
+incremental = true
+lto = false
+opt-level = 0
+overflow-checks = false
+panic = 'unwind'
+rpath = false
+
+[profile.release]
+codegen-units = 1
+debug = false
+debug-assertions = false
+incremental = false
+lto = "thin"
+opt-level = 3
+overflow-checks = false
+panic = 'unwind'
+rpath = false
+
+[profile.test]
+codegen-units = 16
+debug = true
+debug-assertions = true
+incremental = true
+lto = false
+opt-level = 0
+overflow-checks = true
+rpath = false
