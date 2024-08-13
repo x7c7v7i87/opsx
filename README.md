@@ -62,7 +62,7 @@ ext_script = The execution script is based on asynchronous execution by tokio, h
 ## Development Environment
 
 ```txt
-rust 1.68
+rust 1.82.0-nightly
 axum 0.6.18
 For other requirements, please refer to Cargo.toml
 ```
