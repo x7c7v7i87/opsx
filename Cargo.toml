@@ -26,6 +26,6 @@ hmac = "0.12.1"
 # hex-literal = "0.3.4"
 hex = "0.4.3"
 crypto = "0.4.0"
-rustc-serialize = "0.3.24"
+rustc-serialize = "0.3.25"
 
 
