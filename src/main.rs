@@ -4,6 +4,7 @@ use axum::{
     Router,
     Extension,
 };
+use axum_server::Server;
 
 use opsx::{http, json::PayloadJson};
 use std::{net::SocketAddr, sync::Arc};
@@ -40,7 +41,7 @@ async fn main() -> Result<()> {
 
     tracing::debug!("listening on {}", addr);
 
-    let refx = axum::Server::bind(&addr)
+    let refx = Server::bind(addr)
         .serve(app.into_make_service())
         .await
         .unwrap();

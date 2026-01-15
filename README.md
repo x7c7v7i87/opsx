@@ -59,18 +59,35 @@ ext_script = The execution script is based on asynchronous execution by tokio, h
     This is the configuration file, which is located in the root directory of the project.
 ```
 
-## Development Environment
+## debain11-12 development Environment
 
 ```txt
-rust 1.68
-axum 0.6.18
-For other requirements, please refer to Cargo.toml
+sudo apt install -y \
+  build-essential \
+  pkg-config \
+  libssl-dev \
+  libclang-dev \
+  clang \
+  curl \
+  git \
+  cmake \
+  libz-dev \
+  libsqlite3-dev \
+  libpq-dev \
+  libbz2-dev \
+  liblzma-dev \
+  zlib1g-dev \
+  libreadline-dev \
+  libncurses5-dev \
+  libncursesw5-dev
+
 ```
 
 ## Building
 
 ```txt
-git clone git@github.com:x7c7v7i87/opsx.git
+git clone git@github.com:n1o1s1h1/opsx.git
 
 cargo build
+
 ```
